@@ -1,0 +1,50 @@
+button {
+  border: 2px solid var(--white-color);
+  border-radius: 5px;
+  background: none;
+  width: 150px;
+  height: 68px;
+  transition: var(--hover-animation);
+  color: var(--white-color);
+  font-size: 1.714rem;
+  text-transform: uppercase;
+  text-align: center;
+  &.prew {
+    transform: perspective(280px) rotateY(25deg);
+    &::before {
+      content: '';
+      display: inline-block;
+      margin-right: 10px;
+      width: 8px;
+      height: 15px;
+      background: svg-load('../svg/shevron.svg', fill=#fff);
+    }
+    &:hover {
+      &::before {
+        background: svg-load('../svg/shevron.svg', fill=#22b8b3, stroke=#fff);
+      }
+    }
+  }
+  &.next {
+    transform: perspective(280px) rotateY(-25deg);
+    &::after {
+      content: '';
+      display: inline-block;
+      margin-left: 10px;
+      width: 8px;
+      height: 15px;
+      background: svg-load('../svg/shevron.svg', fill=#fff);
+      transform: rotate(180deg);
+    }
+    &:hover {
+      &::after {
+        background: svg-load('../svg/shevron.svg', fill=#22b8b3, stroke=#fff);
+      }
+    }
+  }
+  &:hover {
+    background-color: var(--white-color);
+    cursor: pointer;
+    color: var(--bg-color);
+  }
+}
